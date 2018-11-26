@@ -1,0 +1,13 @@
+basketball
+handball
+football
+tennis
+golf
+volleyball
+skating
+gymnastics
+skiing
+skating
+slalom
+kayaking
+rafting
