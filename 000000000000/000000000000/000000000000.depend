@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1543431907 source:/home/kaz/c++/HW07-glow5200-Reading-From-Files/000000000000/main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+
+1543447338 source:e:\shhhh\000000000000\000000000000\main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	<ctime>
+	<cstdlib>
+
