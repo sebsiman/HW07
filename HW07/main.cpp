@@ -2,38 +2,35 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <iomanip>
 
 using namespace std;
 
 void startMenu();
 void userInput (int& choice);
 void cinFail (int& choice);
+void tempString(char alphabet[], char guess);
+void stateStart();
+void stateHead();
+void stateBody();
+void stateOneArm();
+void stateBothArms();
+void stateOneLeg();
+void stateDead();
+void hangmanStates();
+
 
 int main()
 {
-    int choice;
+    int choice; // menu selection
+    char guess; // user guess at letter in word
+    char alphabet[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+    // bool attempt = true;
 
-    do
-    {
-        startMenu();
-        userInput(choice);
-
-        switch(choice)
-        {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                cout << "Thank you for playing COP 1334 Hangman! Goodbye." << endl;
-         }
-    }while(choice != 6);
+    startMenu();
+    userInput(choice);
+    tempString(alphabet, choice);
+    hangmanStates();
 
 }
 void startMenu()
@@ -70,6 +67,60 @@ void cinFail (int& choice)
     cin >> choice;
 }
 
+void tempString(char alphabet[], char guess)
+{
+    cout << "Available characters: ";
+    for(int i = 0; i < 26; i++)
+    {
+        cout << alphabet[i] << " ";
+    }
+    cout << endl;
+    cin >> guess;
+    for(int i = 0; i < 26; i++)
+    {
+        if(guess == alphabet[i])
+        {
+            alphabet[i] = ' ';
+        }
+    }
+    cout << "Available characters: ";
+    for(int i = 0; i < 26; i++)
+    {
+        cout << alphabet[i] << " ";
+    }
+
+}
+
+void hangmanStates()
+{
+    for(int counter = 1; counter < 8; counter++)
+    {
+        switch(counter)
+        {
+        case 1:
+            stateStart();
+            break;
+        case 2:
+            stateHead();
+            break;
+        case 3:
+            stateBody();
+            break;
+        case 4:
+            stateOneArm();
+            break;
+        case 5:
+            stateBothArms();
+            break;
+        case 6:
+            stateOneLeg();
+            break;
+        case 7:
+            stateDead();
+            break;
+        }
+    }
+}
 
 void stateStart()
 {
@@ -129,7 +180,7 @@ void stateBothArms()
          <<"   +----+  "<< endl
          <<"   |    |  "<< endl
          <<"   |    O  "<< endl
-         <<"   |   /|\ "<< endl
+         <<"   |   /|\\ "<< endl
          <<"   |       "<< endl
          <<"   |       "<< endl
          <<"  ===============\n"
@@ -142,7 +193,7 @@ void stateOneLeg()
          <<"   +----+  "<< endl
          <<"   |    |  "<< endl
          <<"   |    O  "<< endl
-         <<"   |   /|\ "<< endl
+         <<"   |   /|\\ "<< endl
          <<"   |   /   "<< endl
          <<"   |       "<< endl
          <<"  ===============\n"
@@ -155,8 +206,8 @@ void stateDead()
          <<"   +----+  "<< endl
          <<"   |    |  "<< endl
          <<"   |    O  "<< endl
-         <<"   |   /|\ "<< endl
-         <<"   |   / \ "<< endl
+         <<"   |   /|\\ "<< endl
+         <<"   |   / \\ "<< endl
          <<"   | You are Dead"<< endl
          <<"  ===============\n"
          << endl;
