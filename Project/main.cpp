@@ -103,16 +103,16 @@ int main()
             {
                 //clear console
                 system("cls");
-                cout << "Guess a Car!" << endl;
-                hangMan(CARS);      //same as before but with a different file
+                cout << "Guess a Sport!" << endl;
+                hangMan(SPORTS);    //same as before but with a different file
                 break;
             }
         case 3:
             {
                 //clear console
                 system("cls");
-                cout << "Guess a Country!" << endl;
-                hangMan(COUNTRIES); //same as before but with a different file
+                cout << "Guess a Car!" << endl;
+                hangMan(CARS);      //same as before but with a different file
                 break;
             }
         case 4:
@@ -127,8 +127,8 @@ int main()
             {
                 //clear console
                 system("cls");
-                cout << "Guess a Sport!" << endl;
-                hangMan(SPORTS);    //same as before but with a different file
+                cout << "Guess a Country!" << endl;
+                hangMan(COUNTRIES); //same as before but with a different file
                 break;
             }
         case 6:                     //case 6 the user wants to quit the game
