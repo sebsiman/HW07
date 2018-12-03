@@ -1,7 +1,7 @@
 /*
     Programmer : Angel Saldivia
                  Sebastian Siman
-                 Glorimar Alonso
+                 Glorimar Alfonso
                  Chabeli Castano
     Date : 12/3/2018
     Description : Hangman Game
